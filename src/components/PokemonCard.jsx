@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Card = styled.div`
   border: 1px solid #ddd;
@@ -19,16 +20,32 @@ const Card = styled.div`
   }
 `;
 
+const DetailBtn = styled.button`
+  margin-top: 8px;
+`;
+
 function PokemonCard({ pokemon, handleonClick }) {
+  const navigate = useNavigate();
+
   return (
-    <Card
-      onClick={() => {
-        handleonClick(pokemon);
-      }}
-    >
-      <div>{pokemon.korean_name}</div>
-      <img src={pokemon.img_url} />
-      <div>{pokemon.description}</div>
+    <Card>
+      <div
+        onClick={() => {
+          handleonClick(pokemon);
+        }}
+      >
+        <div>{pokemon.korean_name}</div>
+        <img src={pokemon.img_url} />
+        <div>{pokemon.description}</div>
+      </div>
+      <DetailBtn
+        onClick={(e) => {
+          e.stopPropagation();
+          navigate(`/pokemon-detail?id=${pokemon.id}`);
+        }}
+      >
+        자세히
+      </DetailBtn>
     </Card>
   );
 }
