@@ -1,3 +1,19 @@
+import { useState } from "react";
+import styled from "styled-components";
+import Dashboard from "../components/Dashboard";
+
+const DexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+`;
+
 export default function Dex() {
-  return <div>여기는 도감 페이지입니다.</div>;
+  const [selectedPokemon, setSelectedPokemon] = useState([]);
+  return (
+    <DexContainer>
+      <Dashboard selectedPokemon={selectedPokemon} />
+    </DexContainer>
+  );
 }
