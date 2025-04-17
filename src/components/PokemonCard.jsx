@@ -19,11 +19,11 @@ const Card = styled.div`
   }
 `;
 
-function PokemonCard({ pokemon, addPokemon }) {
+function PokemonCard({ pokemon, handleonClick }) {
   return (
     <Card
       onClick={() => {
-        addPokemon(pokemon);
+        handleonClick(pokemon);
       }}
     >
       <div>{pokemon.korean_name}</div>

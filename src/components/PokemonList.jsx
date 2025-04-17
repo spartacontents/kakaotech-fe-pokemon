@@ -22,7 +22,7 @@ const PokemonList = ({ pokemonList, addPokemon }) => {
         <PokemonCard
           key={pokemon.id}
           pokemon={pokemon}
-          addPokemon={addPokemon}
+          handleonClick={addPokemon}
         />
       ))}
     </ListContainer>

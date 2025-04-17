@@ -44,7 +44,7 @@ const PokeballImage = styled.img`
   height: 50px;
 `;
 
-const Dashboard = ({ selectedPokemon }) => {
+const Dashboard = ({ selectedPokemon, removePokemon }) => {
   return (
     <DashboardContainer>
       <Title>대시보드</Title>
@@ -53,7 +53,11 @@ const Dashboard = ({ selectedPokemon }) => {
       ) : (
         <SlotsContainer>
           {selectedPokemon.map((pokemon) => (
-            <PokemonCard key={pokemon.id} pokemon={pokemon} />
+            <PokemonCard
+              key={pokemon.id}
+              pokemon={pokemon}
+              handleonClick={removePokemon}
+            />
           ))}
         </SlotsContainer>
       )}

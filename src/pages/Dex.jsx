@@ -15,13 +15,17 @@ export default function Dex() {
   const [selectedPokemon, setSelectedPokemon] = useState([]);
 
   const addPokemon = (pokemon) => {
-    if (selectedPokemon.length > 6) {
+    if (selectedPokemon.length >= 6) {
       alert("포켓몬은 최대 6개까지만 선택될 수 있어요.");
     } else if (selectedPokemon.includes(pokemon)) {
       alert("이미 선택된 포켓몬 입니다.");
     } else {
       setSelectedPokemon([...selectedPokemon, pokemon]);
     }
+  };
+
+  const removePokemon = (pokemon) => {
+    setSelectedPokemon(selectedPokemon.filter((p) => p.id !== pokemon.id));
   };
 
   return (
