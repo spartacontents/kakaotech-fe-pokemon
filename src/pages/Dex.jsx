@@ -30,7 +30,10 @@ export default function Dex() {
 
   return (
     <DexContainer>
-      <Dashboard selectedPokemon={selectedPokemon} />
+      <Dashboard
+        selectedPokemon={selectedPokemon}
+        removePokemon={removePokemon}
+      />
       <PokemonList pokemonList={MOCK_DATA} addPokemon={addPokemon} />
     </DexContainer>
   );
