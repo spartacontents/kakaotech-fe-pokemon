@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Dashboard from "../components/Dashboard";
+import PokemonList from "../components/PokemonList";
+import MOCK_DATA from "../mock";
 
 const DexContainer = styled.div`
   display: flex;
@@ -14,6 +16,7 @@ export default function Dex() {
   return (
     <DexContainer>
       <Dashboard selectedPokemon={selectedPokemon} />
+      <PokemonList pokemonList={MOCK_DATA} />
     </DexContainer>
   );
 }
