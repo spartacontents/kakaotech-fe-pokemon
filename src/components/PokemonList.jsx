@@ -15,11 +15,15 @@ const Title = styled.div`
   color: black;
 `;
 
-const PokemonList = ({ pokemonList, onAddPokemon }) => {
+const PokemonList = ({ pokemonList, addPokemon }) => {
   return (
     <ListContainer>
       {pokemonList.map((pokemon) => (
-        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+        <PokemonCard
+          key={pokemon.id}
+          pokemon={pokemon}
+          addPokemon={addPokemon}
+        />
       ))}
     </ListContainer>
   );

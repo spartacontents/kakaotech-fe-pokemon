@@ -19,9 +19,13 @@ const Card = styled.div`
   }
 `;
 
-function PokemonCard({ pokemon }) {
+function PokemonCard({ pokemon, addPokemon }) {
   return (
-    <Card>
+    <Card
+      onClick={() => {
+        addPokemon(pokemon);
+      }}
+    >
       <div>{pokemon.korean_name}</div>
       <img src={pokemon.img_url} />
       <div>{pokemon.description}</div>

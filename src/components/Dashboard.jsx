@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PokemonCard from "./PokemonCard";
 
 const DashboardContainer = styled.div`
   display: flex;
@@ -50,11 +51,11 @@ const Dashboard = ({ selectedPokemon }) => {
       {selectedPokemon.length === 0 ? (
         <Message>선택된 포켓몬이 없습니다.</Message>
       ) : (
-        <ul>
+        <SlotsContainer>
           {selectedPokemon.map((pokemon) => (
-            <li key={pokemon.id}>{pokemon.korean_name}</li>
+            <PokemonCard key={pokemon.id} pokemon={pokemon} />
           ))}
-        </ul>
+        </SlotsContainer>
       )}
     </DashboardContainer>
   );
